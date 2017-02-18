@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"
+            asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.css"
+            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+        <script src="~/lib/angular/angular.js" charset="utf-8"></script>
+        <script src="~/lib/angular-route/angular-route.js"></script>
+        <script src="~/lib/angular-youtube-api-factory/dist/angular-youtube-api-factory.min.js"></script>
+        <script src="~/lib/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script src="~/lib/angular-youtube-mb/src/angular-youtube-embed.js"></script>
+        <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/client/app.js"></script>
+        <script src="~/client/controllers/songController.js"></script>
+        <script src="~/client/factories/songFactory.js"></script>
+        <script src="~/client/controllers/userController.js"></script>
+        <script src="~/client/factories/userFactory.js"></script>        
+
+
+@RenderSection("scripts", required: false)
+</body>
+</html>

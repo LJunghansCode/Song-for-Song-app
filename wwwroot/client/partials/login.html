@@ -1,0 +1,16 @@
+<div class="container-fluid" ng-controller="userController"> 
+<h2> a casual place to share music!</h2>
+<h4>Login</h4>
+<h3 class="errorText" ng-bind="errors"></h3>
+<form class="form-inline" method="post" role="form">
+<div class="form-group">
+   <label for="Email">E-Mail:</label>
+    <input class="form-control" type="email" name="Email" ng-model="loginUser.Email" />
+</div>
+<div class="form-group">
+   <label for="Password">Password:</label>
+     <input class="form-control" type="password" name="Password" ng-model="loginUser.Password" />
+</div>
+ <button type="submit" class="btn btn-primary" ng-click="login_user()">Login</button>
+</form>
+</div>

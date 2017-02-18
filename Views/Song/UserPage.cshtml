@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = @ViewBag.userFirstName;
+}
+<h3 class= "pageHeader">Playlist for @ViewBag.userFirstName @ViewBag.userLastName</h3>
+
+<a href="/Songs"> <button><< Back to all songs</button></a> 
+
+<a href="/logout"> <button>Logout~</button></a> 
+
+<hr>
+
+<h3><u>@ViewBag.userFirstNameP Songs Ordered by Times Added</u></h3>
+<div class="row">
+            <div class="two columns">
+                <h4>Song</h4> 
+            </div>
+            <div class="three columns">
+                <h4>Description</h4> 
+            </div>
+            <div class="three columns">
+               <h4>Artist</h4> 
+            </div>
+             <div class="four columns">
+               <h4>Listen Now </h4> 
+            </div>
+</div>
+<hr>
+@{
+    foreach(var song in @ViewBag.MyPlaylist){
+    <div class="row">
+            <div class="two columns">
+                <a href="/Song/@song.song.Id"><h4>@song.song.Title</h4></a> 
+            </div>
+    
+    
+            <div class="three columns">
+                <h4>@song.song.Description</h4> 
+            </div>
+    
+    
+            <div class="three columns">
+                <h4>@song.song.Artist</h4> 
+            </div>
+           
+    
+    
+            <div class="four columns">
+          <iframe width="220" height="115"
+            src="https://www.youtube.com/embed/@song.song.EmbedLink">
+        </iframe></div>
+    </div>
+    <hr>
+
+    }
+}
+
+

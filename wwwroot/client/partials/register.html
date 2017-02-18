@@ -1,0 +1,27 @@
+<div class="container-fluid" ng-controller="userController">
+<h4>Please Register</h4>
+<div class="col-lg-7">
+<form method="post" class="form-horizontal" role="form">
+        <div class="form-group">
+             <label for="firstName">First Name:</label>
+                <input class="form-control"  ng-model="newUser.FirstName"/>
+        </div> 
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+                <input class="form-control"  ng-model="newUser.LastName"/>
+        </div>
+       <div class="form-group">
+            <label for="Email">E-mail: </label> 
+                <input class="form-control"  type="email" ng-model="newUser.Email"/>
+       </div>
+       <div class="form-group">
+             <label for="password">Password: </label>
+                <input class="form-control"  type="password" ng-model="newUser.Password"/>
+       </div>
+       <div class="form-group">
+             <label for="passwordConfirmation">Confirm Password: </label>
+                <input class="form-control"  type="password" ng-model="newUser.PasswordConfirmation"/>
+       </div>
+             <button class="btn btn-lg" ng-click="new_user()" type="submit">Register</button>
+</form>
+</div>

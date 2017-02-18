@@ -1,0 +1,18 @@
+
+<div class="container" ng-controller="userController">
+    <div class="navbar navbar-default">
+        <div class="container-fluid">
+             <div class="navbar-header">
+            <a class="navbar-brand" href="#!/Songs">Song4Song</a>           
+            <a href="/Logout"><button ng-if="userFirstName" type="button" class="btn btn-default navbar-btn">Sign Out</button></a>
+            <a href="#!/Songs"><button type="button" class="btn btn-default navbar-btn">Home</button></a>
+            <a href="#!/AllSongs"><button type="button" class="btn btn-default navbar-btn">Song Directory</button></a>
+            <p class="navbar-text">Signed in as <span ng-if="userFirstName" ng-bind="userFirstName"></span><span ng-if="!userFirstName"><a ng-if="!userFirstName" href="#!/Register">Register here.. <a href="#!/homeLogin"> Or, Sign In</a></a></p></span>
+             </div>
+       </div>
+    </div>
+</div>
+<ng-view></ng-view>
+<hr><br>
+<div class="row"><a href="#!/Register">Register to contribute and save your favorite suggestions</a></div>     
+

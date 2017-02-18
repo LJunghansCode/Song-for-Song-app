@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = @ViewBag.SongTitle;
+}
+<div class="row">
+    <div class="five columns">
+        <h2> @ViewBag.SongTitle, <i> By : @ViewBag.SongArtist </i> -- <h2>
+    </div>
+     <div class="five columns">
+         <h5>  Description  </h5>
+         <p>@ViewBag.SongDescription</p>
+     </div>
+        <div class="one column">
+            <h5>  Genre  </h5>
+         <p>@ViewBag.SongGenre</p>
+     </div>
+
+</div>
+
+@{
+    <h4><u>Listener History</u></h4>
+    <hr>
+    foreach(var P in ViewBag.usingUsers){
+        <a href="/User/@P.user.Id"><p> @P.user.FirstName has listened to  @ViewBag.SongTitle  @P.Count time(s) </p></a>
+
+
+    }
+}
+
+<a href="/logout"> <button>Logout~</button> </a> 
+
+<a href="/Songs"> <button>Home~</button> </a> 

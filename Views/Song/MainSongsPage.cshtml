@@ -1,0 +1,48 @@
+<div class="container">
+@model playlist.Models.RegisterViewModel
+@{
+    Layout = null;
+}
+<h1>Song for Song -- </h1>
+<h2><i> a casual place to share music!</h2></i>
+ <h5><a href="/Songs">All Songs</a> | <a href="/Logout">Log Out</a></h5>
+@ViewData["Success"]
+<h4>Please Register</h4>
+<form asp-controller="Home" asp-action="Register" method="post" role="form">
+    <div asp-validation-summary="All"></div>
+    <div class="row">
+        <div class="six columns">
+             <label for="firstName">First Name:</label>
+                <input class="u-full-width" asp-for="FirstName"/>
+            <label for="lastName">Last Name:</label>
+                <input class="u-full-width" asp-for="LastName"/>
+        </div>
+
+        <div class="six columns">
+            <label for="Email">E-mail: </label> 
+                <input class="u-full-width" type="email" asp-for="Email"/>
+             <label for="password">Password:</label>
+                <input class="u-full-width" asp-for="Password"/>
+             <label for="passwordConfirmation">Confirm Password:</label>
+                <input class="u-full-width" type="password"asp-for="PasswordConfirmation"/>
+             <button class="button-primary" type="submit">Register</button>
+        </div>
+    </div>
+</form>
+
+<h4>Or Login...</h4>
+
+<form action="Login" method="post">
+<div class="row">
+    <div class="seven columns">
+   <label for="Email">E-Mail:</label>
+     <input class="u-full-width" type="email" name="Email">
+     </div>
+     <div class="five columns">
+   <label for="Password">Password:</label>
+     <input class="u-full-width" type="password" name="Password">
+     </div>
+ <button class="button-primary" type="submit">Login</button>
+</form>
+</div>
+</div>

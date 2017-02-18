@@ -1,0 +1,81 @@
+<div class="container" ng-controller="songController">
+ <div class="row">
+            <div class="col-md-7">
+                <h1 class="pageHeader" >Explore, listen, and ..  <i> contribute. </i></h1>
+            </div>
+</div>
+<hr>    
+<div class="row">
+    <div class="col-md-5">
+<h3> <u class="songHeader"> Contribute a new Song </u> </h3>
+</div>
+    <div class="col-md-5">  
+<h3 class="songHeader"> <u>Top 10 Songs, Ordered By Most Popular </u> </h3>
+</div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <h4 class="errorText" ng-bind="errors"></h4>
+      <form method="POST" role="form">
+        <div class="form-group">
+                    <label for="Artist">Artist Name: </label>
+                        <input class="form-control" name="Artist" ng-model="newSong.Artist"/>
+        </div>
+        <div class="form-group">
+                    <label for="Title">Title Name: </label>
+                        <input class="form-control" name="Title" ng-model="newSong.Title"/>
+        </div>
+        <div class="form-group">
+                    <label for="Genre">Genre: </label>
+                        <input class="form-control" name="Genre" ng-model="newSong.Genre"/>
+        </div>
+        <div class="form-group">
+                    <label for="Description">Description: </label>
+                        <textarea class="form-control" name="Description" ng-model="newSong.Description"></textarea>
+        </div>
+        <div class="form-group">
+                    <label for="VidLink">Please enter Youtube Video Link</label>
+                        <input class="form-control" name="EmbedLink" ng-model="newSong.EmbedLink"/> 
+        </div class="form-group">
+                    <button type="submit" class="btn btn-default" ng-click="new_song()">Submit!</button>
+        </div>
+</form>
+
+
+<div class="col-lg-9">
+<table class="table table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>Artist Name</th>
+      <th>Song Title</th>
+      <th>Uploader Description</th>
+      <th>Listen Now</th>
+      <th>Save for Later</th>
+      <div class="Search">
+      <input type="search" placeholder="Search" ng-model="searchBox">
+      </div>
+        </tr>
+            </thead>
+            <tbody>
+                    <tr ng-repeat="song in songs | filter: searchBox | orderBy:'-addedTotal' | limitTo: 10">
+                    <td> <h4 ng-bind="song.artist"></h4> </td>
+                    <td> <a href="#!/Song/{{song.id}}"><h4 ng-bind="song.title"><h4></a> </td>
+                    <td>  <h4 ng-bind="song.description"></h4> </td>
+                    <td> <div class="embed-responsive-item"><youtube-video player-width="'200px'" player-height="'150px'" video-url="getEmbed(song.embedLink)"></youtube-video></div></td>
+                    <td><form action="addToUser" method="POST">
+                        <input type="hidden" name="LoggedInUser" value="">
+                        <input type="hidden" name="SongId" value="{{song.id}}">
+                        <input type="submit" class="btn btn-default" value="Add to my playlist">
+                    </form></td></tr>
+  </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+

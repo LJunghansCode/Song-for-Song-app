@@ -1,0 +1,43 @@
+body{
+  
+}
+h1{
+  color: green;
+}
+h2{
+  color: green;
+}
+h3{
+  color: green;
+}
+h4{
+  color: green;
+}
+h5{
+  color: green;
+}
+.Search{
+  float: right;
+}
+.Search p{
+  font-style: italic;
+}
+.songHeader{
+  color: green;
+}
+.submitForm{
+  float: left;
+}
+.errorText{
+  color: red;
+  font-style: italic;
+}
+#welcomeText{
+  float: right;
+}
+.pageHeader{
+  text-align: center;
+}
+
+
+

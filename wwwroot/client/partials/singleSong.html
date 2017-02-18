@@ -1,0 +1,14 @@
+<div class="container-fluid" ng-controller="songController">
+<div class="row">
+    <div class="col-lg-5">
+        <h3 ng-bind="showOne.title"></h3>
+        <h3 ng-bind="showOne.artist"></h3>
+        <h3 ng-bind="showOne.description"></h3>
+        <h3 ng-bind="showOne.genre"></h3>
+    </div>
+    <div class="col-lg-7">        
+
+<youtube-video video-url="getEmbed(showOne.embedLink)"></youtube-video>
+</div>
+</div>
+</div>
